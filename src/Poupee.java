@@ -1,27 +1,31 @@
 public abstract class Poupee {
-    public int taille;
-    public boolean ouvert;
+    private int taille;
+    private boolean ouverte;
 
     public Poupee(int taille){
         this.taille=taille;
-        this.ouvert=false;
+        this.ouverte=false;
     }
 
-    public void ouvrir(){
-        this.ouvert=true;
-    }
+    public abstract void ouvrir();
+    public abstract void fermer();
 
-    public void fermer(){
-        this.ouvert=false;
-    }
-
-    public abstract void placeDans(Poupee p);
+    public abstract void placerDans(Poupee p);
     public abstract void sortirDans(Poupee p);
+
+
     public int getTaille(){
         return taille;
     }
+    public void setTaille(int taille) {
+        this.taille = taille;
+    }
+    public boolean isOuverte() {
+        return ouverte;
+    }
 
-    public boolean isOuvert(){
-        return ouvert;
+    public void setOuverte(boolean ouverte) {
+        this.ouverte = ouverte;
     }
 }
+
